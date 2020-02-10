@@ -43,4 +43,4 @@ docker service create --name db --network backend --mount type=volume,source=db-
     - so run on a high port of your choosing (I choose 5001), container listens on 80
     - on backend network
     - 1 replica
-docker service create --name result --network backend -p 5001:80 dockeresamples/examplevotingapp_result
+docker service create --name result --network backend -p 5001:80 dockersamples/examplevotingapp_result
