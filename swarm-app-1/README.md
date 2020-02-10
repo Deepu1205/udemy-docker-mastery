@@ -29,7 +29,7 @@ docker service create --name redis  --network frontend --replicas 2 redis:3.2
     - no public ports
     - on frontend and backend networks
     - 1 replica
-docker service create --name worker frontend --nework backend dockersamples/examplevotingapp_worker
+docker service create --name worker --network frontend --nework backend dockersamples/examplevotingapp_worker
 - db
     - postgres:9.4
     - one named volume needed, pointing to /var/lib/postgresql/data
