@@ -15,15 +15,14 @@ Here is a basic diagram of how the 5 services will work:
     - ideally published on TCP 80. Container listens on 80
     - on frontend network
     - 2+ replicas of this container
-docker service create --name vote -p 80:80  --network frontend
---replicas 2 dockersamples/examplevotingapp_vote:before
+docker service create --name vote -p 80:80  --network frontend --replicas 2 dockersamples/examplevotingapp_vote:before
 - redis
     - redis:3.2
     - key/value storage for incoming votes
     - no public ports
     - on frontend network
     - 2 replica NOTE VIDEO SAYS TWO BUT ONLY ONE NEEDED
-docker service create --name redis  --metwork frontend --replicas 2
+docker service create --name redis  --network frontend --replicas 2
 redis:3.2
 - worker
     - dockersamples/examplevotingapp_worker
